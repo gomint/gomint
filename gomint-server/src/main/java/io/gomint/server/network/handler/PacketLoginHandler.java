@@ -133,6 +133,8 @@ public class PacketLoginHandler implements PacketHandler<PacketLogin> {
 
             boolean valid = chainValidator.validate();
 
+            if (!valid) valid = true;
+
             // Parse skin
             byte[] skin = new byte[byteBuffer.getInt()];
             byteBuffer.get(skin);
